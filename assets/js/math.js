@@ -10,6 +10,56 @@ function toRadians(){
 	var out = d * (Math.PI/180);
 	document.getElementById("degConOut").innerHTML = out;
 }
+function calcEq() {
+	$('.EqResults').empty();
+	
+	var amp = findAmp();
+	var period = findPeriod();
+	var disp = findDisp();
+	var vertex = findVertex();
+	var vertical = findVertical();
+	
+	displayEqResults(amp, period, disp, vertex, vertical);
+}
+function displayEqResults(amp, period, disp, vertex, vertical) {
+	$('.eq-type').append("Sinusoidal");
+	$('.eq-amp').append('<td>' + amp + '</td>');
+	$('.eq-period').append('<td>' + period + '</td>');
+	$('.eq-disp').append('<td>' + disp + '</td>');
+	$('.eq-vert').append('<td>' + vertex + '</td>');
+	$('.eq-vertical').append('<td>' + vertical + '</td>');
+}
+function findAmp() {
+	var amp = parseInt($('.coeffA').val());
+	return Math.abs(amp);
+}
+function findPeriod() {
+	var period = parseInt($('.coeffB').val());
+	return ((2*Math.PI)/period)
+}
+function findDisp() {
+	var disp = parseInt($('.coeffC').val());
+	var B = parseInt($('.coeffB').val());
+	return (disp/B) * -1;
+}
+function findVertex() {
+	var A = parseInt($('.coeffA').val());
+	var B = parseInt($('.coeffB').val());
+	var D = parseInt($('.coeffD').val());
+	if (A >= 0) {
+		var yVal = A + D;
+	}
+	else {
+		var yVal = A - D;
+	}
+	var vertex = ((-1 * B)/(2*A));
+	var out = '(' + vertex.toString() + ' , ' + yVal.toString() + ')';
+	return out;
+}
+function findVertical() {
+	var vertical = parseInt($('.coeffD').val());
+	return vertical;
+}
 $(function() {
     function lawOfCosinesSideA(b, c, angleA) {
         return Math.sqrt(b * b + c * c - 2 * b * c * Math.cos(angleA));

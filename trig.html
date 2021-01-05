@@ -56,6 +56,12 @@
 										<li>
 											<a href="#degToRad">Degrees to Radians Calculator</a>
 										</li>
+										<li>
+											<a href="#eqCal">Sinusoidal Equation Calculator</a>
+										</li>
+										<li>
+											<a href="#ellipseCal">Ellipse Calculator</a>
+										</li>
 									</ul>
 									
 									<hr class="major" />
@@ -213,7 +219,90 @@
 									<p>Output: </p>
 									<textarea id="degConOut" readonly></textarea>
 									<a href="#top">Return to Top</a>
+									
 									<hr class="major" />
+									
+									<h2 id="eqCal">Sinusoidal Equation Calculator</h2>
+									<p></p>
+									<span class="image"><img src="images/trigEq.jpg" alt=""/></span>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">Coefficient A</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="A" class="coeffA">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">Coefficient B</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="B" class="coeffB">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">Coefficient C</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="C" class="coeffC">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">Coefficient D</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="0" placeholder="D" class="coeffD">
+												</div>
+											</div>
+										</div>
+									</form>
+									<button onclick="calcEq()">Calculate</button>
+									
+									<table class="table">
+										<thead>
+											<tr>
+												<td class="table-heading">Type</td>
+												<td class="EqResults eq-type"></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="table-heading">Amplitude</td>
+												<td class="EqResults eq-amp"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Period</td>
+												<td class="EqResults eq-period"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Displacement</td>
+												<td class="EqResults eq-disp"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Vertex</td>
+												<td class="EqResults eq-vert"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Vertical Shift</td>
+												<td class="EqResults eq-vertical"></td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#top">Return to Top</a>
+									
+									<hr class="major" />
+									
+									<h2 id="ellipseCal">Ellipse Calculator</h2>
+									<p></p>
+									<span class="image"><img src="images/ellipse.jpg" alt=""/></span>
+									
+									<a href="#top">Return to Top</a>
 								</section>
 
 						</div>
@@ -249,19 +338,6 @@
 												<li><a href="#">Feugiat Veroeros</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
 										<li><a href="learnMore.html">Learn More</a></li>
 									</ul>
 								</nav>
