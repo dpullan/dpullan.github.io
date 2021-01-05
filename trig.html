@@ -45,55 +45,175 @@
 									<p>This page contains various calculators and/or tools to help with trigonometry.</p>
 									<p>Trigonometry (from Greek trigōnon, "triangle" and metron, "measure") is a branch of mathematics that studies relationships between side lengths and angles of triangles. The field emerged in the Hellenistic world during the 3rd century BC from applications of geometry to astronomical studies. The Greeks focused on the calculation of chords, while mathematicians in India created the earliest-known tables of values for trigonometric ratios (also called trigonometric functions) such as sine.</p>
 									<p>Throughout history, trigonometry has been applied in areas such as geodesy, surveying, celestial mechanics, and navigation. Trigonometry is known for its many identities, which are equations used for rewriting trigonometrical expressions to solve equations, to find a more useful expression, or to discover new relationships.</p>
-
+									
+									<ul>
+										<li>
+											<a href="#triCalc">Triangle Calculator</a>
+										</li>
+										<li>
+											<a href="#radToDeg">Radians to Degrees Calculator</a>
+										</li>
+										<li>
+											<a href="#degToRad">Degrees to Radians Calculator</a>
+										</li>
+									</ul>
+									
 									<hr class="major" />
 
-									<h2>Triangle Calculator</h2>
+									<h2 id="triCalc">Triangle Calculator</h2>
+									<p>Does not deal with ambiguous cases</p>
 									
-									<form method="post" action="#"> 
-										<div class="row gtr-uniform"> 
+									<span class="image"><img src="images/trigTriangle.png" alt=""/></span>
+									
+									<form method="post" action="#">
+									<div class="row gtr-uniform">
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Side A (Opposite)</label>
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-A" id="trig-A" value="" placeholder="Opposite" />
+												<input type="text" value="" placeholder="A (units)" class="js-input-a">
 											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Side B (Adjacent)</label>
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-B" id="trig-B" value="" placeholder="Adjacent" />
+												<input type="text" value="" placeholder="B (units)" class="js-input-b">
 											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-C" id="trig-C" value="" placeholder="Hypotenuse" />
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Side C (Hypotenuse)</label>
+											<div class="col-md-7 col-xs-6 col-sm-10">
+												<input type="text" value="" placeholder="C (units)" class="js-input-c">
 											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-angle-A" id="trig-angle-A" value="" placeholder="Angle A" />
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Angle A (degrees)</label>
+											<div class="col-md-7 col-xs-6 col-sm-10">
+												<input type="text" value="" placeholder="A (degrees)" class="form-control js-input-angle-a">
 											</div>
-											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-angle-B" id="trig-angle-B" value="" placeholder="Angle B" />
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Angle B (degrees)</label>
+											<div class="col-md-7 col-xs-6 col-sm-10">
+												<input type="text" value="" placeholder="B (degrees)" class="form-control js-input-angle-b">
 											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label col-md-5 col-xs-6 col-sm-2">Angle C (degrees)</label>
+											<div class="col-md-7 col-xs-6 col-sm-10">
+												<input type="text" value="" placeholder="C (degrees)" class="form-control js-input-angle-c">
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="message col-md-12"></div>
+										</div>
+									</div>
+									</form>
+									<br />
+									<br />
+									
+									<div class="form-group">
+										<div class="col-md-offset-5 col-md-7 col-xs-12"><button type="submit" class="btn btn-block">Calculate</button></div>
+									</div>
+									
+									<table class="table">
+										<thead>
+											<tr>
+												<td class="table-heading">Type</td>
+												<td class="results tri-type"></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="table-heading">Circumference</td>
+												<td class="results tri-circ"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Area</td>
+												<td class="results tri-area"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Side A (units)</td>
+												<td class="results tri-a"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Side B (units)</td>
+												<td class="results tri-b"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Side C (units)</td>
+												<td class="results tri-c"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Angle A (degrees)</td>
+												<td class="results tri-angle-a"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Angle B (degrees)</td>
+												<td class="results tri-angle-b"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Angle C (degrees)</td>
+												<td class="results tri-angle-c"></td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#top">Return to Top</a>
+									
+									<hr class="major" />
+
+									<h2 id="radToDeg">Radians to Degrees</h2>
+									<p>Converts from Radians to Degrees</p>
+									<form>
+										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="trig-angle-C" id="trig-angle-C" value="" placeholder="Angle C" />
+												<input type="text" name="radian" id="radian" value="" placeholder="Enter Radians" />
 											</div>
 										</div>
 									</form>
-									<button onclick="findA()">Find Opposite</button>
-									<button onclick="findB()">Find Adjacent</button>
-									<button onclick="findHyp()">Find Hypotenuse</button>
-									
+									<button onclick="toDegrees()">Convert</button>
 									<br />
 									<br />
 									
 									<p>Output: </p>
-									<p id="trigOut"></p>
+									<textarea id="radConOut" readonly></textarea>
+									
+									<a href="#top">Return to Top</a>
 
 									<hr class="major" />
 
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-
+									<h2 id="degToRad">Degrees to Radians</h2>
+									<p>Converts from Degrees to Radians</p>
+									<form>
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="degree" id="degree" value="" placeholder="Enter Degrees" />
+											</div>
+										</div>
+									</form>
+									<button onclick="toRadians()">Convert</button>
+									<br />
+									<br />
+									
+									<p>Output: </p>
+									<textarea id="degConOut" readonly></textarea>
+									<a href="#top">Return to Top</a>
 									<hr class="major" />
-
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-
 								</section>
 
 						</div>
@@ -103,13 +223,14 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search -->
+							<!-- Search 
 								<section id="search" class="alt">
 									<form method="post" action="#">
 										<input type="text" name="query" id="query" placeholder="Search" />
 									</form>
 								</section>
-
+								-->
+								
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
@@ -120,9 +241,9 @@
 										<li><a href="generic.html">Generic</a></li>
 										<li><a href="elements.html">Elements</a></li>
 										<li>
-											<span class="opener">Submenu</span>
+											<span class="opener">Math Subjects</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="trig.html">Trigonometry</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
 												<li><a href="#">Tempus Magna</a></li>
 												<li><a href="#">Feugiat Veroeros</a></li>
@@ -141,11 +262,11 @@
 										</li>
 										<li><a href="#">Maximus Erat</a></li>
 										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
+										<li><a href="learnMore.html">Learn More</a></li>
 									</ul>
 								</nav>
 
-							<!-- Section -->
+							<!-- Section 
 								<section>
 									<header class="major">
 										<h2>Ante interdum</h2>
@@ -168,24 +289,24 @@
 										<li><a href="#" class="button">More</a></li>
 									</ul>
 								</section>
-
+								-->
 							<!-- Section -->
 								<section>
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<p>Use the information below to get in contact with me, I may not always be available by phone so please feel free to send an email if I do not pickup your call.</p>
 									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="icon solid fa-envelope"><a href="mailto:dpullan13@gmail.com">dpullan13@gmail.com</a></li>
+										<li class="icon solid fa-phone">(250) 888-6603</li>
+										<li class="icon solid fa-home">1660 Baseline Road Unit B<br />
+										Ottawa, Ontario</li>
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+									<p class="copyright">&copy; Damon Pullan. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 								</footer>
 
 						</div>
