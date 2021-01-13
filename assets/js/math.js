@@ -60,6 +60,140 @@ function findVertical() {
 	var vertical = parseInt($('.coeffD').val());
 	return vertical;
 }
+function calcEllipse() {
+	$('.EllipResults').empty();
+	
+	var type = findEllipType();
+	var a = findEllipA();
+	var b = findEllipB();
+	var c = findEllipC();
+	var r = findEllipR();
+	var center = findEllipCenter();
+	var area = findEllipArea();
+	var sMajAxis = findEllipMajAxis();
+	var sMinAxis = findEllipMinAxis();
+	var foci = findEllipFoci();
+	var vertices = findEllipVertices();
+	
+	displayEllipResults(type, a, b, c, r, center, area, sMajAxis, sMinAxis, foci, vertices);
+}
+function findEllipA() {
+	var A = parseInt($('.EllipA').val());
+	var a = Math.sqrt(A);
+	return a.toFixed(2);
+}
+function findEllipB() {
+	var B = parseInt($('.EllipB').val());
+	var b = Math.sqrt(B);
+	return b.toFixed(2);
+}
+function findEllipC() {
+	var A = parseInt($('.EllipA').val());
+	var B = parseInt($('.EllipB').val());
+	if (A > B) {
+		var C = A - B;
+	}
+	else {
+		var C = B - A;
+	}
+	var c = Math.sqrt(C);
+	return c.toFixed(2);
+}
+function findEllipR() {
+	var R = parseInt($('.EllipR').val());
+	var r = Math.sqrt(R);
+	return r.toFixed(2);
+}
+function findEllipH() {
+	var h = parseInt($('.EllipH').val());
+	if (isNaN(h)) {
+		return 0;
+	}
+	else {
+		return h;
+	}
+}
+function findEllipK() {
+	var k = parseInt($('.EllipK').val());
+	if (isNaN(k)) {
+		return 0;
+	}
+	else {
+		return k;
+	}
+}
+function findEllipType() {
+	var h = findEllipH();
+	var k = findEllipK();
+	if (h == 0 && k == 0) {
+		return "At Center"
+	}
+	else {
+		return "Off Center"
+	}
+}
+function findEllipCenter() {
+	var h = findEllipH();
+	var k = findEllipK();
+	return "(" + h + ' , ' + k + ')';
+}
+function findEllipArea() {
+	var a = findEllipA();
+	var b = findEllipB();
+	var area = Math.PI * a * b;
+	return area.toFixed(2);
+}
+function findEllipMajAxis() {
+	var a = findEllipA();
+	var b = findEllipB();
+	if (a > b) {
+		return a;
+	}
+	else if (b > a) {
+		return b;
+	}
+	else {
+		return a;
+	}
+}
+function findEllipMinAxis() {
+	var a = findEllipA();
+	var b = findEllipB();
+	if (a > b) {
+		return b;
+	}
+	else if (b > a) {
+		return a;
+	}
+	else {
+		return b;
+	}
+}
+function findEllipFoci() {
+	var c = findEllipC();
+	var h = findEllipH();
+	var k = findEllipK();
+	return "(" + h + " , " + ((k * 1) + (c * 1)) + ")" + " , " + "(" + h + " , " + (k - c) + ")";
+}
+function findEllipVertices() {
+	var b = findEllipMajAxis();
+	var h = findEllipH();
+	var k = findEllipK();
+	return "(" + h + " , " + ((k * 1) + (b * 1)) + ")" + " , " + "(" + h + " , " + (k - b) + ")";
+}
+function displayEllipResults(EllipType, a, b, c, r, center, area, sMajAxis, sMinAxis, foci, vertices) {
+	$('.Ellip-type').append(EllipType);
+	$('.Ellip-a').append('<td>' + a + '</td>');
+	$('.Ellip-b').append('<td>' + b + '</td>');
+	$('.Ellip-c').append('<td>' + c + '</td>');
+	$('.Ellip-r').append('<td>' + r + '</td>');
+	$('.Ellip-cent').append('<td>' + center + '</td>');
+	$('.Ellip-area').append('<td>' + area + '</td>');
+	$('.Ellip-sMajAxis').append('<td>' + sMajAxis + '</td>');
+	$('.Ellip-sMinAxis').append('<td>' + sMinAxis + '</td>');
+	$('.Ellip-foci').append('<td>' + foci + '</td>');
+	$('.Ellip-vertices').append('<td>' + vertices + '</td>');
+}
 $(function() {
     function lawOfCosinesSideA(b, c, angleA) {
         return Math.sqrt(b * b + c * c - 2 * b * c * Math.cos(angleA));

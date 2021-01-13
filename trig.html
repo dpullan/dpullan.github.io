@@ -40,7 +40,7 @@
 									
 									<!-- image taken from https://pixabay.com/illustrations/geometry-mathematics-volume-surface-1044090/-->
 									<span class="image main"><img src="images/trig.jpg" alt="" /></span>
-
+									<p id="top"></p>
 									<p>This page contains various calculators and/or tools to help with trigonometry.</p>
 									<p>Trigonometry (from Greek trigōnon, "triangle" and metron, "measure") is a branch of mathematics that studies relationships between side lengths and angles of triangles. The field emerged in the Hellenistic world during the 3rd century BC from applications of geometry to astronomical studies. The Greeks focused on the calculation of chords, while mathematicians in India created the earliest-known tables of values for trigonometric ratios (also called trigonometric functions) such as sine.</p>
 									<p>Throughout history, trigonometry has been applied in areas such as geodesy, surveying, celestial mechanics, and navigation. Trigonometry is known for its many identities, which are equations used for rewriting trigonometrical expressions to solve equations, to find a more useful expression, or to discover new relationships.</p>
@@ -298,8 +298,112 @@
 									<hr class="major" />
 									
 									<h2 id="ellipseCal">Ellipse Calculator</h2>
-									<p></p>
+									<p>Currently can only calculate equations in the form Ax<sup>2</sup> + By<sup>2</sup> = R</p>
 									<span class="image"><img src="images/ellipse.jpg" alt=""/></span>
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">A</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="A" class="EllipA">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">B</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="B" class="EllipB">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">R</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="R" class="EllipR">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">h</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="h" class="EllipH">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-5 col-xs-6 col-sm-2">k</label>
+												<div class="col-6 col-12-xsmall">
+													<input type="text" value="" placeholder="k" class="EllipK">
+												</div>
+											</div>
+										</div>
+									</form>
+									<button onclick="calcEllipse()">Calculate</button>
+									
+									<table class="table">
+										<thead>
+											<tr>
+												<td class="table-heading">Type</td>
+												<td class="EllipResults Ellip-type"></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="table-heading">a</td>
+												<td class="EllipResults Ellip-a"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">b</td>
+												<td class="EllipResults Ellip-b"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">c</td>
+												<td class="EllipResults Ellip-c"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">r</td>
+												<td class="EllipResults Ellip-r"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Center</td>
+												<td class="EllipResults Ellip-cent"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Area</td>
+												<td class="EllipResults Ellip-area"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Semi-major axis</td>
+												<td class="EllipResults Ellip-sMajAxis"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Semi-minor axis</td>
+												<td class="EllipResults Ellip-sMinAxis"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Foci</td>
+												<td class="EllipResults Ellip-foci"></td>
+											</tr>
+										</tbody>
+										<tbody>
+											<tr>
+												<td class="table-heading">Vertices</td>
+												<td class="EllipResults Ellip-vertices"></td>
+											</tr>
+										</tbody>
+									</table>
 									
 									<a href="#top">Return to Top</a>
 								</section>
