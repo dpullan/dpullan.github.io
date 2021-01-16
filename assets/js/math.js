@@ -81,15 +81,14 @@ function drawEllipse() {
 	$('#ellipseDraw').empty();
 	var a = findEllipA();
 	var b = findEllipB();
-	var rx;
-	var ry;
-	if (a > b) {
-		rx = a;
-		ry = b;
+	var r = findEllipR();
+	var rx = a;
+	var ry = b;
+	if (a == r) {
+		rx = 1;
 	}
-	else {
-		rx = b;
-		ry = a;
+	else if (b == r) {
+		ry = 1;
 	}
 	d3.select('#ellipseDraw')
 	.append('svg')
