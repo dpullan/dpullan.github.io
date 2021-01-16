@@ -77,6 +77,34 @@ function calcEllipse() {
 	
 	displayEllipResults(type, a, b, c, r, center, area, sMajAxis, sMinAxis, foci, vertices);
 }
+function drawEllipse() {
+	$('#ellipseDraw').empty();
+	var a = findEllipA();
+	var b = findEllipB();
+	var rx;
+	var ry;
+	if (a > b) {
+		rx = a;
+		ry = b;
+	}
+	else {
+		rx = b;
+		ry = a;
+	}
+	d3.select('#ellipseDraw')
+	.append('svg')
+	.attr('width', 720)
+	.attr('height', 500)
+	.style('background', '#bce8f1')
+	.append('ellipse')
+	.attr('cx', 360)
+	.attr('cy', 250)
+	.attr('rx', rx*10)
+	.attr('ry', ry*10)
+	.style('fill', '#d9edf7')
+	.style('stroke', '#31708f')
+	.style('stroke-width', '25px')
+}
 function findEllipA() {
 	var A = parseInt($('.EllipA').val());
 	var a = Math.sqrt(A);
@@ -146,6 +174,7 @@ function findEllipArea() {
 function findEllipMajAxis() {
 	var a = findEllipA();
 	var b = findEllipB();
+	console.log(a > b);
 	if (a > b) {
 		return a;
 	}
