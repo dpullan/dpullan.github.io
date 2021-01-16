@@ -103,7 +103,7 @@ function drawEllipse() {
 	.attr('ry', ry*10)
 	.style('fill', '#d9edf7')
 	.style('stroke', '#31708f')
-	.style('stroke-width', '25px')
+	.style('stroke-width', '1%')
 }
 function findEllipA() {
 	var A = parseInt($('.EllipA').val());
